@@ -9,6 +9,7 @@ app = FastAPI()
 origins = [
     "http://127.0.0.1",
     "http://127.0.0.1:8080",
+    "http://54.196.26.53" # Add the frontend IP here
 ]
 
 app.add_middleware(
