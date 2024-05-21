@@ -4,3 +4,4 @@ class Comment(BaseModel):
     id: int
     name: str
     contents: str
+    date : str

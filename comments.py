@@ -17,8 +17,10 @@ async def add_comment(comment: Comment) -> dict:
 
 @comments_router.delete("/comments/{comment_id}")
 async def delete_comment(comment_id: int = Path(..., title="the ID of comment to delete")) -> dict:
-    for i, comment in enumerate(comments_list):
-        if comment.id == comment_id:
-            del comments_list[i]
-            return {"msg": f"comment {comment_id} deleted successfully"}
-        return {"msg": f"comment {comment_id} not found"}
+        for index, comment in enumerate(comments_list):
+            if comment.id == comment_id:
+                del comments_list[index]
+                return {"msg": f"comment id {comment_id} deleted successfully"}
+        return {"msg": f"comment id {comment_id} not found"}
+
+

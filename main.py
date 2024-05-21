@@ -7,9 +7,8 @@ from comments import comments_router
 app = FastAPI()
 
 origins = [
-    "http://127.0.0.1",
-    "http://127.0.0.1:8080",
-    "http://54.196.26.53" # Add the frontend IP here
+    "http://127.0.0.1:5500",
+    "http://54.196.26.53:4001" # Add the frontend IP here
 ]
 
 app.add_middleware(
@@ -27,4 +26,4 @@ async def welcome() -> dict:
 app.include_router(comments_router)
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=8080, reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=4000, reload=True)
